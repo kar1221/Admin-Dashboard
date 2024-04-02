@@ -14,8 +14,23 @@
   <body>
     <div class="container">
       <header>
-        <input type="text" id="search">
-        <label for="search"></label>
+        <div class="search-container">
+          <input type="text" id="search" placeholder=" "/>
+          <label for="search"> Search </label>
+          <button class="search-btn">
+            <img src="svg/search.svg" alt="search icon" class="icon" />
+          </button>
+        </div>
+        <div class="tools-container">
+          <button class="new-btn">New</button>
+          <button class="notification-btn">
+            <img src="svg/notifications.svg" alt="notification icon" class="icon" />
+          </button>
+          <button class="profile-btn">
+            <img src="svg/settings.svg" alt="settings icon" class="icon" />
+          </button>
+          <div class="profile-picture"></div>
+        </div>
       </header>
       <nav class="sidebar">
         <div class="title-container">
