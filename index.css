@@ -9,18 +9,21 @@
   --title-font-family: "Montserrat", sans-serif;
   --content-font-family: "Inter", sans-serif;
   --border-radius: 0.9375rem;
+  --urgent-yellow: #fde047;
+  --in-progress-blue: #0ea5e9;
+  --archived-gray: #6b7280;
+  --completed-green: #22c55e;
 }
 
 .container {
   display: grid;
-  grid-template-columns: max(260px, 18%) 1fr;
+  grid-template-columns: 260px 1fr;
   grid-template-rows: 100px 1fr;
   min-height: 100vh;
-  width: 100vw;
 }
 
 .divide-line {
-  height: 0.1rem;
+  height: 1px;
   width: 100%;
   background-color: var(--color-accent);
 }
@@ -28,12 +31,16 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 1.5rem;
   background: var(--color-primary);
   grid-column: 1;
   grid-row: 1 / -1;
+}
+
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -42,11 +49,14 @@
   background-size: cover;
   aspect-ratio: 1 / 1;
   border-radius: 100%;
+}
+
+.tools-container .profile-picture {
   height: 64px;
 }
 
 .profile-picture.large {
-  height: max(130px, 20vh);
+  height: max(130px, min(200px, 20vh));
 }
 
 .links {
@@ -55,6 +65,8 @@
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+  margin-bottom: 1rem;
+  position: sticky;
 }
 
 .links li a {
@@ -64,13 +76,11 @@
   text-decoration: none;
   color: white;
   font-weight: 900;
-  font-size: clamp(1.25rem, 0.4787rem + 0.8511vw, 1.5rem);
+  font-size: 1.5rem;
   padding: 1rem;
   border-radius: 0 1.5rem 1.5rem 0;
   border-left: 4px solid transparent;
-  transition:
-    background 0.2s ease-in-out,
-    border 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
 }
 
 .links li a:hover {
@@ -80,6 +90,7 @@
 
 .icon {
   filter: invert(100%);
+  cursor: pointer;
 }
 
 .links .icon {
@@ -88,6 +99,7 @@
 }
 
 .title-container {
+  margin-top: 2rem;
   font-family: var(--title-font-family);
   color: white;
 }
@@ -107,13 +119,13 @@
 }
 
 .greet-container p {
-  font-size: clamp(1rem, 0.0745rem + 1.0213vw, 1.3rem);
+  font-size: 1.3rem;
   font-weight: 600;
 }
 
 .greet-container .username {
   font-weight: 800;
-  font-size: clamp(1.5rem, -0.0426rem + 1.7021vw, 2rem);
+  font-size: 2rem;
 }
 
 header {
@@ -153,9 +165,7 @@ header {
   color: var(--color-accent);
   position: absolute;
   padding: 0 0.5rem;
-  transition:
-    top 0.2s ease-in-out,
-    font-size 0.2s ease-in-out,
+  transition: top 0.2s ease-in-out, font-size 0.2s ease-in-out,
     background-color 0.2s ease-in-out;
 }
 
@@ -219,9 +229,196 @@ header button:hover {
 }
 
 main {
+  position: relative;
   grid-row: 2;
   grid-column: 2;
   background-color: var(--color-secondary);
   display: grid;
-  grid-template-rows: 10% 1fr;
+  grid-template-columns: 1fr 25%;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-auto-rows: 300px;
+  gap: 0 2rem;
+  padding: 2rem;
+}
+
+.card-container::before {
+  content: "Your Projects";
+  position: absolute;
+  top: 2rem;
+  font-family: var(--title-font-family);
+  font-weight: 700;
+  color: var(--color-accent);
+  font-size: 1.2rem;
+}
+
+.card {
+  margin-top: 2rem;
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: 0 4px 4px 0 #a9bbc9;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card.important {
+  border-left: 0.8rem solid var(--urgent-yellow);
+}
+
+.card.in-progress {
+  border-left: 0.8rem solid var(--in-progress-blue);
+}
+
+.card.archived {
+  border-left: 0.8rem solid var(--archived-gray);
+}
+
+.card.completed {
+  border-left: 0.8rem solid var(--completed-green);
+}
+
+.card.important .card-title::after {
+  content: " (Important)";
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.card.in-progress .card-title::after {
+  content: " (On-going)";
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.card.completed .card-title::after {
+  content: " (Completed)";
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.card.archived .card-title::after {
+  content: " (Archived)";
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.card .card-title {
+  color: black;
+  font-family: var(--title-font-family);
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.card .card-body {
+  font-family: var(--content-font-family);
+  color: var(--color-accent);
+  font-weight: 500;
+  font-size: 1rem;
+  flex: 1;
+}
+
+.card-interactions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+.card .icon {
+  filter: invert(33%) sepia(5%) saturate(780%) hue-rotate(173deg)
+    brightness(95%) contrast(84%);
+}
+
+.information-container {
+  --padding: 2rem;
+  position: relative;
+  padding: var(--padding);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+}
+
+.information-container .announcement {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.information-container .announcement::before {
+  content: "Announcement";
+  position: absolute;
+  top: 2rem;
+  left: var(--padding);
+  font-family: var(--title-font-family);
+  font-weight: 700;
+  color: var(--color-accent);
+  font-size: 1.2rem;
+}
+
+.information-container .card:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.announcement .card-title {
+  font-size: 1rem;
+}
+
+.announcement .card-body {
+  font-size: 0.8rem;
+}
+
+.announcement .subcard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.information-container .announcement::before {
+  content: "Announcement";
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  font-family: var(--title-font-family);
+  font-weight: 700;
+  color: var(--color-accent);
+  font-size: 1.2rem;
+}
+
+.information-container .random-fact-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.random-fact.card {
+  flex: 1;
+  font-family: var(--content-font-family);
+}
+
+.information-container .random-fact::before {
+  content: "Random fact";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--title-font-family);
+  font-weight: 700;
+  color: var(--color-accent);
+  font-size: 1.2rem;
+}
+
+.random-fact img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
 }

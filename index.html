@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,7 +15,7 @@
     <div class="container">
       <header>
         <div class="search-container">
-          <input type="text" id="search" placeholder=" "/>
+          <input type="text" id="search" placeholder=" " />
           <label for="search"> Search </label>
           <button class="search-btn">
             <img src="svg/search.svg" alt="search icon" class="icon" />
@@ -24,7 +24,11 @@
         <div class="tools-container">
           <button class="new-btn">New</button>
           <button class="notification-btn">
-            <img src="svg/notifications.svg" alt="notification icon" class="icon" />
+            <img
+              src="svg/notifications.svg"
+              alt="notification icon"
+              class="icon"
+            />
           </button>
           <button class="profile-btn">
             <img src="svg/settings.svg" alt="settings icon" class="icon" />
@@ -33,64 +37,230 @@
         </div>
       </header>
       <nav class="sidebar">
-        <div class="title-container">
-          <h1>Dashboard</h1>
+        <div class="sidebar-container">
+          <div class="title-container">
+            <h1>Dashboard</h1>
+          </div>
+          <div class="profile-picture large"></div>
+          <div class="greet-container">
+            <p>Welcome back,</p>
+            <p class="username">kar1221</p>
+          </div>
+          <div class="divide-line"></div>
+          <ul class="links">
+            <li>
+              <a href="#">
+                <img src="svg/home.svg" alt="home icon" class="icon" />
+                <p>Home</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="svg/profiles.svg" alt="home icon" class="icon" />
+                <p>Profile</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="svg/message.svg" alt="home icon" class="icon" />
+                <p>Message</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="svg/history.svg" alt="home icon" class="icon" />
+                <p>History</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="svg/tasks.svg" alt="home icon" class="icon" />
+                <p>Tasks</p>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="svg/community.svg" alt="home icon" class="icon" />
+                <p>Community</p>
+              </a>
+            </li>
+          </ul>
         </div>
-        <div class="profile-picture large"></div>
-        <div class="greet-container">
-          <p>Welcome back,</p>
-          <p class="username">kar1221</p>
-        </div>
-        <div class="divide-line"></div>
-        <ul class="links">
-          <li>
-            <a href="#">
-              <img src="svg/home.svg" alt="home icon" class="icon" />
-              <p>Home</p>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="svg/profiles.svg" alt="home icon" class="icon" />
-              <p>Profile</p>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="svg/message.svg" alt="home icon" class="icon" />
-              <p>Message</p>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="svg/history.svg" alt="home icon" class="icon" />
-              <p>History</p>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="svg/tasks.svg" alt="home icon" class="icon" />
-              <p>Tasks</p>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="svg/community.svg" alt="home icon" class="icon" />
-              <p>Community</p>
-            </a>
-          </li>
-        </ul>
       </nav>
       <main>
         <div class="card-container">
-          <div class="card"></div>
-          <div class="card"></div>
-          <div class="card"></div>
-          <div class="card"></div>
-          <div class="card"></div>
-          <div class="card"></div>
+          <div class="card important">
+            <div class="card-title">Amazing Project</div>
+            <div class="card-body">
+              <p>
+                Proin mattis consectetur odio, a gravida ipsum faucibus at. In
+                vel dictum arcu. Suspendisse potenti.
+              </p>
+            </div>
+            <div class="card-interactions">
+              <img src="svg/bookmark.svg" alt="" class="icon" />
+              <img src="svg/add.svg" alt="" class="icon" />
+              <img src="svg/more.svg" alt="" class="icon" />
+            </div>
+          </div>
+          <div class="card in-progress">
+            <div class="card-title">This is a project</div>
+            <div class="card-body">
+              <p>
+                Vestibulum accumsan elit sit amet erat pretium, ac accumsan
+                lacus sodales.
+              </p>
+            </div>
+            <div class="card-interactions">
+              <img src="svg/bookmark.svg" alt="" class="icon" />
+              <img src="svg/add.svg" alt="" class="icon" />
+              <img src="svg/more.svg" alt="" class="icon" />
+            </div>
+          </div>
+          <div class="card in-progress">
+            <div class="card-title">Or is it?</div>
+            <div class="card-body">
+              <p>
+                Phasellus tellus sapien, elementum placerat tellus sit amet,
+                efficitur placerat lectus.
+              </p>
+            </div>
+            <div class="card-interactions">
+              <img src="svg/bookmark.svg" alt="" class="icon" />
+              <img src="svg/add.svg" alt="" class="icon" />
+              <img src="svg/more.svg" alt="" class="icon" />
+            </div>
+          </div>
+          <div class="card in-progress">
+            <div class="card-title">*Vsauce Noise*</div>
+            <div class="card-body">
+              <p>
+                Nam ex neque, cursus non viverra vitae, ullamcorper in nunc.
+                Proin aliquet tellus sit amet neque feugiat, nec imperdiet felis
+                pharetra.
+              </p>
+            </div>
+            <div class="card-interactions">
+              <img src="svg/bookmark.svg" alt="" class="icon" />
+              <img src="svg/add.svg" alt="" class="icon" />
+              <img src="svg/more.svg" alt="" class="icon" />
+            </div>
+          </div>
+          <div class="card completed">
+            <div class="card-title">I am out of idea</div>
+            <div class="card-body">
+              <p>
+                Duis consequat molestie fermentum. Donec quam tortor, suscipit
+                ut fringilla non, interdum non libero. Nulla eget leo placerat,
+                volutpat mi vel, molestie sapien.
+              </p>
+            </div>
+            <div class="card-interactions">
+              <img src="svg/bookmark.svg" alt="" class="icon" />
+              <img src="svg/add.svg" alt="" class="icon" />
+              <img src="svg/more.svg" alt="" class="icon" />
+            </div>
+          </div>
+          <div class="card completed">
+            <div class="card-title">Creeper?</div>
+            <div class="card-body">
+              <p>
+                Vivamus ultricies tempus tristique. Nam id nisi eu enim egestas
+                tempus a vitae eros. Ut placerat tempor nisi eu interdum.
+              </p>
+            </div>
+            <div class="card-interactions">
+              <img src="svg/bookmark.svg" alt="" class="icon" />
+              <img src="svg/add.svg" alt="" class="icon" />
+              <img src="svg/more.svg" alt="" class="icon" />
+            </div>
+          </div>
+          <div class="card completed">
+            <div class="card-title">Aw man</div>
+            <div class="card-body">
+              <p>
+                Morbi viverra mi leo, et porta dui facilisis at. Etiam sed
+                malesuada tellus. Phasellus nibh odio, semper at pellentesque
+                ac, venenatis id odio.
+              </p>
+            </div>
+            <div class="card-interactions">
+              <img src="svg/bookmark.svg" alt="" class="icon" />
+              <img src="svg/add.svg" alt="" class="icon" />
+              <img src="svg/more.svg" alt="" class="icon" />
+            </div>
+          </div>
+          <div class="card archived">
+            <div class="card-title">So we back in the mine</div>
+            <div class="card-body">
+              <p>
+                Nam interdum consequat sapien, ac vestibulum odio elementum nec.
+                Pellentesque vel augue diam. Duis metus nunc, placerat ut augue
+                nec, finibus feugiat massa. Curabitur nec neque ultrices,
+                laoreet nisl ut, scelerisque ante.
+              </p>
+            </div>
+            <div class="card-interactions">
+              <img src="svg/bookmark.svg" alt="" class="icon" />
+              <img src="svg/add.svg" alt="" class="icon" />
+              <img src="svg/more.svg" alt="" class="icon" />
+            </div>
+          </div>
+          <div class="card archived">
+            <div class="card-title">Got our pickaxe swinging from</div>
+            <div class="card-body">
+              <p>
+                Side to side. Side side to side. This task a grueling one. Hope
+                to find some diamonds to-night night night diamonds tonight.
+              </p>
+            </div>
+            <div class="card-interactions">
+              <img src="svg/bookmark.svg" alt="" class="icon" />
+              <img src="svg/add.svg" alt="" class="icon" />
+              <img src="svg/more.svg" alt="" class="icon" />
+            </div>
+          </div>
         </div>
-        <div class="information-container"></div>
+        <div class="information-container">
+          <div class="annoucement-container">
+            <div class="announcement card">
+              <div class="subcard">
+                <div class="card-title">Site maintainance</div>
+                <div class="card-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Cumque, minima harum! Consectetur, a neque non qui fuga illo
+                  enim! Expedita fugiat natus quidem possimus a cum culpa odit
+                  unde non.
+                </div>
+              </div>
+              <div class="divide-line"></div>
+              <div class="subcard">
+                <div class="card-title">Terraria is fun</div>
+                <div class="card-body">
+                  Consectetur, a neque non qui fuga illo enim! Expedita fugiat
+                  natus quidem possimus a cum culpa odit unde non.
+                </div>
+              </div>
+              <div class="divide-line"></div>
+              <div class="subcard">
+                <div class="card-title">I am bored</div>
+                <div class="card-body">
+                  Mauris ultricies, erat ut dictum tempus, quam dui dignissim
+                  ex, eu tincidunt metus eros sit amet massa.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="random-fact-container">
+            <div class="random-fact card">
+              My code is so bad that I don't even want to revise it anymore.
+              <img
+                src="https://lifewithahuskycom.files.wordpress.com/2017/09/sad11111111111.jpg?w=640"
+                alt="sadge"
+              />
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   </body>
